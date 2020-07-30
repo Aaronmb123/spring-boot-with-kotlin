@@ -9,7 +9,7 @@ class BlogConfiguration {
 
     @Bean
     fun databaseInitializer(userRepository: UserRepository,
-                            articleRepository: ArticleRepository) {
+                            articleRepository: ArticleRepository) =
         ApplicationRunner {
             val smaldini = userRepository.save(User("smaldini",
                     "Stephanie", "Maldini"))
@@ -30,6 +30,4 @@ class BlogConfiguration {
                     )
             )
         }
-    }
-
 }
